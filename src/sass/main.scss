@@ -3,6 +3,7 @@ $font-feature: 'Limelight', cursive;
 $key-color: #6EB9D6;
 $dark-key-color: #245A6B;
 $text-color: #fff;
+$text-dark: #000;
 
 /*body {
   font: 100% $font-stack;
@@ -22,16 +23,61 @@ body {
 	background-size: auto 100%;
 	background-attachment: fixed;
 	background-position: center;
+}
+
+.text-light{
 	font: 100% $font-stack;
 	color: $text-color;
 }
-#wrapper { 
+
+.text-dark{
+	font: 100% $font-stack;
+	color: $text-dark;
+}
+
+.background-black{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: -1;
+	overflow: auto;
+}
+
+.background-white{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.5);
+	z-index: -1;
+	overflow: auto;
+}
+
+.wrapper-black { 
 	@extend %no-gap;
 	margin-top: 70px;
 	width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 100px 3em 50px 3em;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 50px 1em;
 }
+
+.wrapper-white { 
+	@extend %no-gap;
+	margin-top: 70px;
+	width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 50px 1em;
+}
+
+.content-container{
+	@extend %no-gap;
+	margin-top: 3em;
+}
+
 
 #logo-container{
 	width: 100%;
@@ -107,13 +153,13 @@ body {
 	li{
 		text-decoration: none;
 		text-align: center;
-		margin-bottom: 2em; 
+		margin-bottom: 4em; 
 	}
 	a{
 		margin: 0 auto;
 		font-size: 150%;
 		text-decoration: none;
-		color: $text-color;
+		color: inherit;
 		border-bottom: 3px solid $text-color;
 		opacity: .6;
 	}
@@ -139,11 +185,13 @@ body {
 	padding: 0 3em;
 	text-align: center;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 #intro{
 	p{
 	font-size: 100%;
+	margin-top: 0;
 	}
 	.text-xxl{
 	color: $key-color;
@@ -158,8 +206,10 @@ body {
 	.link-btn{
 		display: block;
 		height: 1.5em;
-		width: 11em;
-		margin: 2em auto;
+		width: 70%;
+		min-width: 8em;
+		max-width: 12em;
+		margin: 1.5em auto;
 		text-decoration: none;
 		font-size: 1.2em;
 		line-height: 1.5em;
@@ -190,7 +240,7 @@ body {
 		display: inline-block;
 		height: 30px;
 		width: 30px;
-		margin-right: 10px;
+		margin-right: 5px;
 		vertical-align: middle;
 	}
 
@@ -200,7 +250,7 @@ body {
 }
 
 #skills{
-	margin-top: 4em;
+	margin-top: 5em;
 }
 
 #skills{
@@ -237,28 +287,28 @@ footer{
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 100px;
-	background-color: rgba(0, 0, 0, 0.9)
 }
 
 
 
-@media screen and (min-width: 768px) and (orientation: landscape){
+@media screen and (min-width: 900px) and (orientation: landscape){
 	body {
 		background-size: cover;
-		padding: 0;
-		
+		padding: 0;		
+	}
+
+	.background-black, .background-white{
+		width: 100vw;
+		height: 100vh;
 	}
 
 	#mainnav{
 		display: block;
+		height: auto;
 		background-color: transparent;
 		font-size: 12px;
 		z-index: 10;
 		width: 50%;
-/*		max-width: 800px;*/
-/*		padding: 0 3em;*/
-/*		position: fixed;
-		left: 12.5%;*/
 		text-align: center;
 	}
 
@@ -268,34 +318,48 @@ footer{
 
 	#mainnav li{
 		display: inline;
-/*		float: left;
-		margin-right: 5em;*/
+		vertical-align: middle;
 	}
 
 	#mainnav a{
 		border-bottom: none;
 		padding-bottom: 0.5em;
-		margin: 0 4em;
+		margin: 0 2em;
 	}
 
 	#mainnav .active-page{
 		border-bottom: 5px solid $key-color;
 	}
 
-	#wrapper { 
-		margin: 0;
+
+	.wrapper-black, .wrapper-white{ 
+		margin-top: 0;
 		position: fixed;
 		top: 20px;
 		left: 20px;
 		bottom: 20px;
 		width: 48%;
+		padding: 0;
 		overflow: auto;
-		padding: 10% 1.5em 0 1.5em;
+	}
+
+	.content-container{
+		display: block;
+		height: 80%;
+		padding: 0;
+		margin-top: 18vh;
+		box-sizing: border-box;
+		overflow: auto;
+
 	}
 
 	#intro, #skills{
 		max-width: 800px;
 		padding: 0;
+	}
+
+	#intro p{
+		margin-bottom: 25px;
 	}
 
 	#togglediv{
@@ -337,14 +401,35 @@ footer{
 		display: inline-block;
 		width: 50%;
 		float: left;
-		border-right: 1px dotted $text-color;	}
+		border-right: 1px dotted $text-color;	
+	}
 
 	.cards :last-child{
 		border-right: none;
 	}
 
-	.card-item p{
-		padding: 0 2em;
+	.card-item .card-left{
+		float: right;
+		margin-right: 2em;
+		display: block;
+		width: 80%;
+		max-width: 240px;
+		text-align: right;
+	}
+
+	.card-item .card-right{
+		float: left;
+		margin-left: 2em;
+		display: block;
+		width: 80%;
+		max-width: 240px;
+		text-align: left;
+	}
+
+
+
+	#skills li{
+		margin-bottom: 0;
 	}
 
 	footer{
@@ -359,9 +444,31 @@ footer{
 
 }
 
+
+@media screen and (min-width: 1200px){
+	#mainnav a{
+		padding-bottom: 1em;
+		margin: 0 4em;
+	}
+
+}
+
+@media screen and (min-width: 1800px){
+	#mainnav a{
+		padding-bottom: 1em;
+		margin: 0 6em;
+	}
+
+	.content-container{
+		height: auto;
+		margin-top: 25vh;
+	}
+
+}
+
 /* Scroll Bar Style */
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
 }
 ::-webkit-scrollbar-track {
     /*box-shadow: inset 0 0 5px grey; 
