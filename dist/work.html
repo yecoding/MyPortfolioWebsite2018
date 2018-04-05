@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Abel|Limelight" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
-	<script src="js/main.js"></script>
+	<script src="js/main.js" defer></script>
 </head>
 
 <body class="text-dark">
@@ -21,8 +21,7 @@
 
 		<!-- Main navbar -->
 	  	<div id="togglediv">
-	  		<p class="openBtn">&#9776;</p>
-	  		<p class="closeBtn">&times;</p>
+	  		<span></span>
 	  	</div>
 	  	<nav id="mainnav">
 	  		<ul>
@@ -43,12 +42,13 @@
 
 	  	<div id="thumbnail-container">
 	  		<div class="thumbnail-center">
-		  		<div class="thumbnail-item"><img src="image/thumbnail-online-store-demo.png"></div>
-		  		<div class="thumbnail-item"><img src="image/thumbnail-city-fact-app.png"></div>
-		  		<div class="thumbnail-item"><img src="image/thumbnail-js.png"></div>
-		  		<div class="thumbnail-item"><img src="image/thumbnail-todo-app.png"></div>
-		  		<div class="thumbnail-item"><img src="image/thumbnail-investecs.png"></div>
-		  		<div class="thumbnail-item"><img src="image/thumbnail-8188yonge.png"></div>
+		  		<div class="thumbnail-item active-item" id="linkStore"><img src="image/thumbnail-online-store-demo.png"></div>
+		  		<div class="thumbnail-item" id="linkCity"><img src="image/thumbnail-city-fact-app.png"></div>
+		  		<div class="thumbnail-item" id="linkJS"><img src="image/thumbnail-js.png"></div>
+		  		<div class="thumbnail-item" id="linkTodo"><img src="image/thumbnail-todo-app.png"></div>
+		  		<div class="thumbnail-item" id="linkInvestecs"><img src="image/thumbnail-investecs.png"></div>
+		  		<div class="thumbnail-item" id="link8188"><img src="image/thumbnail-8188yonge.png"></div>
+		  		<div class="thumbnail-item" id="linkPortfolio"><img src="image/thumbnail-ye-portfolio.png"></div>
 		  	</div>	  		
 	  	</div>
 
@@ -111,9 +111,9 @@
   					</div>
   				</section>
 
-<!--   				<section class="work-item" id="portfolioWebsite">
+  				<section class="work-item" id="portfolioWebsite">
   					<div class="work-image-container">
-  						<a href="http://yewang.design"><img src="image/ye-portfolio2018.png" class="single-img"></a>
+  						<a href="http://yewang.design"><img src="image/ye-portfolio.png" class="single-img"></a>
   					</div>
   					<div class="work-brief-containter">
   						<h3><a href="http://yewang.design">Portfolio Website</a></h3>
@@ -122,7 +122,7 @@
 				          <p>I re-designed my portfolio website in 2018. The previous website was mainly focusing on my coding skills and web techniques. The recent one is aiming to keep a balance on design and develop.</p>
 				          <p><a href="https://github.com/yecoding/MyPortfolioWebsite2018" class="git-link">View this project <span>on Github<span></a></p>
   					</div>
-  				</section> -->
+  				</section>
 
   				<section class="work-item" id="investecsWebsite">
   					<div class="work-image-container">
