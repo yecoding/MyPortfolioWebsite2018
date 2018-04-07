@@ -11,7 +11,6 @@ imageGallery("#linkInvestecs", "#investecsWebsite");
 imageGallery("#link8188", "#yonge8188Website");
 imageGallery("#linkPortfolio", "#portfolioWebsite");
 
-
 function imageGallery(thumbnailID, itemID){
 	$(thumbnailID).click(function(){
 		$(".work-item").hide();
