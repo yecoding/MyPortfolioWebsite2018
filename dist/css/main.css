@@ -1,8 +1,3 @@
-.wrapper-black, .wrapper-white, #mainnav ul, #intro, #skills, #about, #contact-info, #skills ul, #skills li, #skills h3 {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0; }
-
 @-webkit-keyframes typing {
   from {
     width: 0; }
@@ -189,12 +184,19 @@
 
 body {
   margin: 0;
-  padding: 0;
-  background-image: url("../image/background.jpg");
-  background-repeat: no-repeat;
+  padding: 0; }
+
+body:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: url("../image/background.jpg") center center;
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center; }
+  background-attachment: scroll; }
 
 .text-light {
   font: 100% "Abel", Helvetica, sans-serif;
@@ -204,42 +206,18 @@ body {
   font: 100% "Abel", Helvetica, sans-serif;
   color: #000; }
 
-.background-black {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow: auto; }
-
-.background-white {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  z-index: -1;
-  overflow: auto; }
-
-.wrapper-black {
+.wrapper {
   margin-top: 70px;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
   padding: 50px 0; }
 
-.wrapper-white {
-  margin-top: 70px;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 50px 1em; }
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.7); }
+
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.7); }
 
 .content-container {
-  margin-top: 3em; }
-
-#logo-container, #logo-container-high {
-  display: block; }
+  margin: 2em 0; }
 
 #logo-container span {
   display: none; }
@@ -266,7 +244,7 @@ body {
 
 #togglediv {
   position: fixed;
-  bottom: 20px;
+  bottom: 40px;
   left: 50%;
   margin-left: -30px;
   z-index: 10;
@@ -294,10 +272,10 @@ body {
   top: 29px;
   left: 50%;
   margin-left: -16px;
-  -webkit-transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out; }
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out; }
 
 #togglediv span:before {
   top: -10px; }
@@ -321,20 +299,26 @@ body {
   transform: rotate(-45deg); }
 
 #mainnav {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 100%;
   background-color: #6EB9D6;
-  z-index: 5; }
+  z-index: 5;
+  overflow: hidden;
+  -webkit-transition: bottom 0.5s ease-in-out;
+  -moz-transition: bottom 0.5s ease-in-out;
+  -o-transition: bottom 0.5s ease-in-out;
+  transition: bottom 0.5s ease-in-out; }
 
 #mainnav ul {
+  margin: 0;
+  padding: 0;
   margin-top: 5em; }
 
 #mainnav li {
-  text-decoration: none;
+  list-style: none;
   text-align: center;
   margin-bottom: 4em; }
 
@@ -346,19 +330,20 @@ body {
   border-bottom: 3px solid #fff;
   opacity: .6; }
 
+#mainnav p {
+  color: #fff; }
+
 #mainnav .active-page {
   opacity: 1; }
 
 /*Content*/
 #intro, #skills, #about {
-  display: block;
   max-width: 600px;
   padding: 0 3em;
   text-align: center;
   margin: 0 auto; }
 
 #intro p {
-  font-size: 100%;
   margin-top: 0; }
 
 #intro .text-xxl {
@@ -399,9 +384,11 @@ body {
   background-color: #6EB9D6;
   color: #fff; }
 
+#contact-info {
+  padding: 0; }
+
 #contact-info li {
   list-style: none;
-  display: block;
   margin: 1em auto; }
 
 #contact-info img {
@@ -417,11 +404,16 @@ body {
 #skills {
   margin-top: 5em; }
 
+#skills ul {
+  margin: 0;
+  padding: 0; }
+
 #skills li {
   list-style: none;
   margin-bottom: 4em; }
 
 #skills h3 {
+  margin: 0;
   font-size: 120%;
   color: #245A6B; }
 
@@ -429,16 +421,13 @@ body {
   font: 240% "Limelight", cursive;
   color: #6EB9D6; }
 
-#skills p {
-  font-size: 100%; }
-
 #about .text-m span {
   font-size: 120%;
   padding-bottom: 5px;
   border-bottom: 2px solid #6EB9D6; }
 
 #about div {
-  margin-top: 2em; }
+  margin: 0 2em; }
 
 #about .text-l {
   color: #6EB9D6;
@@ -446,13 +435,9 @@ body {
   font-weight: bold;
   margin-bottom: 3em; }
 
-#about {
-  margin-bottom: 2em; }
-
 #experience {
-  display: block;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.7);
   padding-bottom: 3em; }
 
 #experience .diagram-column {
@@ -470,7 +455,7 @@ body {
 
 #years .text-year {
   display: inline-block;
-  background-color: #C6C6C6;
+  background-color: #245A6B;
   color: #fff;
   line-height: 24px;
   vertical-align: middle;
@@ -481,7 +466,7 @@ body {
   width: 0;
   height: 0;
   border-top: 12px solid transparent;
-  border-left: 12px solid #C6C6C6;
+  border-left: 12px solid #245A6B;
   border-bottom: 12px solid transparent;
   vertical-align: middle; }
 
@@ -621,31 +606,29 @@ body {
   animation: progress 1.5s; }
 
 footer {
-  width: 100%;
   text-align: center;
   padding-top: 10px;
-  padding-bottom: 100px; }
+  padding-bottom: 135px;
+  color: #fff; }
 
 .work-item {
-  display: block;
-  max-width: 800px;
-  margin: 0 10%;
+  padding: 0 10%;
   text-align: center;
   overflow: auto;
   padding-bottom: 3em; }
 
 .work-item .work-image-container {
-  width: 100%;
   overflow: hidden; }
 
 .work-item .single-img {
+  display: inline-block;
   width: 100%;
   max-width: 600px; }
 
 .work-item .double-img {
-  width: 50%;
-  max-width: 400px;
-  float: left; }
+  display: inline-block;
+  width: 45%;
+  max-width: 300px; }
 
 .work-item a {
   text-decoration: none;
@@ -667,34 +650,33 @@ footer {
   body {
     background-size: cover;
     padding: 0; }
-  .background-black, .background-white {
-    width: 100vw;
-    height: 100vh; }
   #mainnav {
-    display: block;
-    position: relative;
-    height: auto;
     background-color: transparent;
+    position: relative;
+    display: block;
+    height: auto;
     font-size: 12px;
     z-index: 10;
     width: 48%;
     margin-left: 20px;
-    text-align: center; }
+    text-align: center;
+    padding-bottom: 1em; }
   #mainnav p {
     display: none; }
   #mainnav li {
     display: inline;
     vertical-align: middle; }
   #mainnav a {
+    display: inline-block;
     color: inherit;
     border-bottom: none;
     padding-bottom: 0.5em;
     margin: 0 2em; }
+  #mainnav a:hover {
+    border-bottom: 1px solid #key-color; }
   #mainnav .active-page {
     border-bottom: 5px solid #6EB9D6; }
-  #mainnav a:hover {
-    border-bottom: 1px solid #6EB9D6; }
-  .wrapper-black, .wrapper-white {
+  .wrapper {
     margin-top: 0;
     position: fixed;
     top: 20px;
@@ -702,17 +684,19 @@ footer {
     bottom: 20px;
     width: 48%;
     padding: 0;
-    overflow: auto; }
+    overflow: hidden; }
   .content-container {
-    display: block;
     height: 80%;
-    padding: 0;
     margin-top: 15vh;
-    box-sizing: border-box;
-    overflow: auto; }
-  #intro, #skills {
-    max-width: 800px;
-    padding: 0; }
+    overflow: auto;
+    padding: 0 17px 0 0;
+    margin-right: -17px; }
+  #intro, #skills, #about {
+    max-width: 800px; }
+  #skills {
+    margin-top: 3em; }
+  #about {
+    padding: 3em 5em; }
   #intro p {
     margin-bottom: 25px; }
   #togglediv {
@@ -725,24 +709,26 @@ footer {
     top: 50%;
     margin-top: -80px;
     margin-right: -20px; }
-  #logo-container-high {
-    width: 50%;
-    height: 100px;
-    position: fixed;
-    top: 8vh;
-    right: 0; }
+  /*	#logo-container-high{
+		width: 50%;
+		height: 100px;
+		position: fixed;
+		top: 8vh;
+		right: 0;
+	}*/
   #logo-container img {
     height: 120px;
     position: absolute;
     left: 50%;
     top: 0;
     margin-left: -60px; }
-  #logo-container-high img {
-    height: 100px;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    margin-left: -50px; }
+  /*	#logo-container-high img{
+		height: 100px;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		margin-left: -50px;
+	}*/
   #logo-container span {
     display: inline-block; }
   #logo-container a {
@@ -795,7 +781,6 @@ footer {
   #skills li {
     margin-bottom: 0; }
   footer {
-    background-color: transparent;
     margin: 0;
     padding: 0;
     width: 48%;
@@ -807,14 +792,26 @@ footer {
     width: 50%;
     position: fixed;
     right: 0;
-    top: 10vh;
-    margin-top: 200px;
-    text-align: center; }
-  .thumbnail-center {
+    top: 20px;
+    text-align: center;
+    overflow: hidden; }
+  .wrapper-right {
     width: 50%;
-    margin: 0 auto;
+    position: fixed;
+    right: 0;
+    top: 20px;
+    bottom: 0;
+    overflow: auto; }
+  #logo-container-high {
+    position: relative;
+    height: 150px;
+    text-align: center; }
+  #logo-container-high img {
+    display: inline-block; }
+  .thumbnail-center {
+    margin: 2em auto;
     min-width: 350px;
-    max-width: 500px; }
+    max-width: 400px; }
   .thumbnail-item {
     display: inline-block;
     width: 100px;
@@ -831,23 +828,20 @@ footer {
     opacity: 1; }
   .active-item {
     opacity: 1; }
-  #about {
-    max-width: 65%;
-    margin: 0 auto; }
+  #about .text-l {
+    margin-bottom: 1em; }
   #experience {
-    position: absolute;
-    margin: 0;
-    padding: 0;
     background-color: transparent;
-    width: 36%;
-    top: 50%;
-    right: 7%;
-    margin-top: -12em; }
+    width: 60%;
+    margin: 0 auto; }
   .work-item {
-    display: none;
-    padding-bottom: 0; }
+    overflow-y: scroll;
+    height: 0;
+    padding: 0 117px 0 100px;
+    margin-right: -17px;
+    transition: height .5s ease-in-out; }
   .work-item:first-child {
-    display: block; } }
+    height: 100%; } }
 
 @media screen and (min-width: 1200px) {
   #mainnav a {
@@ -855,31 +849,16 @@ footer {
     margin: 0 4em; } }
 
 @media screen and (min-width: 1800px) {
-  #mainnav a {
-    padding-bottom: 1em;
-    margin: 0 6em; }
-  .work-item {
-    margin: 0 auto;
+  .work-text-container {
+    max-width: 600px;
+    margin: 0 auto; }
+  .wrapper-right, #thumbnail-container {
+    top: 15vh; }
+  #experience {
+    margin-top: 5em;
+    max-width: 600px; }
+  #about div {
+    margin: 5em auto;
     max-width: 600px; }
   .content-container {
-    padding-top: 12vh; }
-  #about {
-    max-width: 40%;
-    margin: 0 auto; } }
-
-/* Scroll Bar Style */
-::-webkit-scrollbar {
-  width: 4px; }
-
-::-webkit-scrollbar-track {
-  color: #b1b1b1; }
-
-::-webkit-scrollbar-thumb {
-  background: #245A6B;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  border-radius: 2px; }
-
-::-webkit-scrollbar-thumb:hover {
-  background: #6EB9D6; }
+    margin-top: 20vh; } }

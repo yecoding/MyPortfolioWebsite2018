@@ -182,16 +182,22 @@ $text-dark: #000;
 	animation: $ani;
 }
 
-
-
-body {
+body{
 	margin: 0;
 	padding: 0;
-	background-image: url('../image/background.jpg');
-	background-repeat: no-repeat;
+}
+
+body:after{
+	content: "";
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	background: url('../image/background.jpg') center center;
 	background-size: cover;
-	background-attachment: fixed;
-	background-position: center;
+	background-attachment: scroll;
 }
 
 .text-light{
@@ -204,50 +210,21 @@ body {
 	color: $text-dark;
 }
 
-.background-black{
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.5);
-	overflow: auto;
-}
-
-.background-white{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: rgba(255, 255, 255, 0.5);
-	z-index: -1;
-	overflow: auto;
-}
-
-.wrapper-black { 
-	@extend %no-gap;
-	margin-top: 70px;
-	width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+.wrapper{ 
+	margin-top: 70px; 
     padding: 50px 0;
 }
 
-.wrapper-white { 
-	@extend %no-gap;
-	margin-top: 70px;
-	width: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 50px 1em;
+.bg-black{
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bg-white { 
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .content-container{
-	margin-top: 3em;
-}
-
-
-#logo-container, #logo-container-high{
-	display: block;
+	margin: 2em 0;
 }
 
 #logo-container{
@@ -285,7 +262,7 @@ body {
 
 #togglediv{
 	position: fixed;
-	bottom: 20px;
+	bottom: 40px;
 	left: 50%;
 	margin-left: -30px;
 	z-index: 10;
@@ -308,7 +285,7 @@ body {
 	top: 29px;
 	left: 50%;
 	margin-left: -16px;
-	@include transition(all, 300ms, ease-in-out);
+	@include transition(all, 500ms, ease-in-out);
 }
 
 #togglediv span:before{
@@ -342,25 +319,27 @@ body {
 
 
 #mainnav{
-	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	bottom: 100%;
 	background-color: $key-color;
 	z-index: 5;
+	overflow: hidden;
+	@include transition(bottom, .5s, ease-in-out);
 }
 
 #mainnav {
 	ul{
-		@extend %no-gap;
+		margin: 0;
+		padding: 0;
 		margin-top: 5em;
 
 	}
 
 	li{
-		text-decoration: none;
+		list-style: none;
 		text-align: center;
 		margin-bottom: 4em; 
 	}
@@ -373,6 +352,10 @@ body {
 		opacity: .6;
 	}
 
+	p{
+		color: $text-color;
+	}
+
 	.active-page{
 		opacity: 1;
 	}
@@ -380,8 +363,6 @@ body {
 
 /*Content*/
 #intro, #skills, #about{
-	@extend %no-gap;
-	display: block;
 	max-width: 600px;
 	padding: 0 3em;
 	text-align: center;
@@ -390,7 +371,6 @@ body {
 
 #intro{
 	p{
-	font-size: 100%;
 	margin-top: 0;
 	}
 	.text-xxl{
@@ -399,7 +379,6 @@ body {
 	}
 
 	#greetingText{
-
 		color: $key-color;
 		font-size: 360%;
 		overflow: hidden;
@@ -440,13 +419,12 @@ body {
 }
 
 #contact-info{
-	@extend %no-gap;
+	padding: 0;
 }
 
 #contact-info{
 	li{
 		list-style: none;
-		display: block;
 		margin: 1em auto;
 	}
 
@@ -469,15 +447,15 @@ body {
 
 #skills{
 	ul{
-		@extend %no-gap;
+		margin: 0;
+		padding: 0;
 	}
 	li{
-		@extend %no-gap;
 		list-style: none;
 		margin-bottom: 4em;
 	}
 	h3{
-		@extend %no-gap;
+		margin: 0;
 		font-size: 120%;
 		color: $dark-key-color;
 	}
@@ -485,10 +463,6 @@ body {
 	span{
 		font: 240% $font-feature;
 		color: $key-color;
-	}
-
-	p{
-		font-size: 100%;
 	}
 }
 
@@ -499,7 +473,7 @@ body {
 		border-bottom: 2px solid $key-color;
 	}
 	div{
-		margin-top: 2em;
+		margin: 0 2em;
 	}
 	.text-l{
 		color: $key-color;
@@ -508,14 +482,10 @@ body {
 		margin-bottom: 3em;
 	}
 }
-#about{
-	margin-bottom: 2em;
-}
 
 #experience{
-	display: block;
 	text-align: center;
-	background-color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.7);
 	padding-bottom: 3em;
 }
 
@@ -541,7 +511,7 @@ body {
 
 	.text-year{
 		display: inline-block;
-		background-color: #C6C6C6;
+		background-color: $dark-key-color;
 		color: $text-color;
 		line-height: 24px;
 		vertical-align: middle;
@@ -552,7 +522,7 @@ body {
 		width: 0;
 		height: 0;
 		border-top: 12px solid transparent;
-		border-left: 12px solid #C6C6C6;
+		border-left: 12px solid $dark-key-color;
 		border-bottom: 12px solid transparent;
 		vertical-align: middle;
 	}
@@ -683,16 +653,14 @@ body {
 
 
 footer{
-	width: 100%;
 	text-align: center;
 	padding-top: 10px;
-	padding-bottom: 100px;
+	padding-bottom: 135px;
+	color: $text-color;
 }
 
 .work-item{
-	display: block;
-	max-width: 800px;
-	margin: 0 10%;
+	padding: 0 10%;
 	text-align: center;
 	overflow: auto;
 	padding-bottom: 3em;
@@ -700,19 +668,19 @@ footer{
 
 .work-item{
 	.work-image-container{
-		width: 100%;
 		overflow: hidden;
 	}
 
 	.single-img{
+		display: inline-block;
 		width: 100%;
 		max-width: 600px;
 	}
 
 	.double-img{
-		width: 50%;
-		max-width: 400px;
-		float: left;
+		display: inline-block;
+		width: 45%;
+		max-width: 300px;
 	}
 
 	a{
@@ -744,21 +712,17 @@ footer{
 		padding: 0;		
 	}
 
-	.background-black, .background-white{
-		width: 100vw;
-		height: 100vh;
-	}
-
 	#mainnav{
-		display: block;
-		position: relative;
-		height: auto;
 		background-color: transparent;
+		position: relative;
+		display: block;
+		height: auto;
 		font-size: 12px;
 		z-index: 10;
 		width: 48%;
 		margin-left: 20px;
 		text-align: center;
+		padding-bottom: 1em;
 	}
 
 	#mainnav p{
@@ -771,22 +735,23 @@ footer{
 	}
 
 	#mainnav a{
+		display: inline-block;
 		color: inherit;
 		border-bottom: none;
 		padding-bottom: 0.5em;
 		margin: 0 2em;
 	}
 
+	#mainnav a:hover{
+		border-bottom: 1px solid #key-color;
+	}
+
 	#mainnav .active-page{
 		border-bottom: 5px solid $key-color;
 	}
 
-	#mainnav a:hover{
-		border-bottom: 1px solid $key-color;
-	}
 
-
-	.wrapper-black, .wrapper-white{ 
+	.wrapper{ 
 		margin-top: 0;
 		position: fixed;
 		top: 20px;
@@ -794,21 +759,27 @@ footer{
 		bottom: 20px;
 		width: 48%;
 		padding: 0;
-		overflow: auto;
+		overflow: hidden;
 	}
 
 	.content-container{
-		display: block;
 		height: 80%;
-		padding: 0;
 		margin-top: 15vh;
-		box-sizing: border-box;
 		overflow: auto;
+		padding: 0 17px 0 0;
+		margin-right: -17px;
 	}
 
-	#intro, #skills{
+	#intro, #skills, #about{
 		max-width: 800px;
-		padding: 0;
+	}
+
+	#skills{
+		margin-top: 3em;
+	}
+
+	#about{
+		padding: 3em 5em;
 	}
 
 	#intro p{
@@ -829,13 +800,13 @@ footer{
 	margin-right: -20px;
 	}
 
-	#logo-container-high{
+/*	#logo-container-high{
 		width: 50%;
 		height: 100px;
 		position: fixed;
 		top: 8vh;
 		right: 0;
-	}
+	}*/
 
 	#logo-container img{
 		height: 120px;
@@ -845,13 +816,13 @@ footer{
 		margin-left: -60px;
 	}
 
-	#logo-container-high img{
+/*	#logo-container-high img{
 		height: 100px;
 		position: absolute;
 		left: 50%;
 		top: 0;
 		margin-left: -50px;
-	}
+	}*/
 
 	#logo-container span{
 	display: inline-block;
@@ -925,7 +896,6 @@ footer{
 	}
 
 	footer{
-		background-color: transparent;
 		margin: 0;
 		padding: 0;
 		width: 48%;
@@ -939,16 +909,33 @@ footer{
 		width: 50%;
 		position: fixed;
 		right: 0;
-		top: 10vh;
-		margin-top: 200px;
+		top: 20px;
 		text-align: center;
+		overflow: hidden;
+	}
+
+	.wrapper-right{
+		width: 50%;
+		position: fixed;
+		right: 0;
+		top: 20px;
+		bottom: 0;
+		overflow: auto;
+	}
+
+	#logo-container-high{
+		position: relative;
+		height: 150px;
+		text-align: center;
+	}
+	#logo-container-high img{
+		display: inline-block;
 	}
 
 	.thumbnail-center{
-		width: 50%;
-		margin: 0 auto;
+		margin: 2em auto;
 		min-width: 350px;
-		max-width: 500px;
+		max-width: 400px;
 	}
 
 	.thumbnail-item{
@@ -970,31 +957,27 @@ footer{
 		opacity: 1;
 	};
 
-	#about{
-		max-width: 65%;
-		margin: 0 auto;
+	#about .text-l{
+		margin-bottom: 1em;
 	}
 
 	#experience{
-		position: absolute;
-		margin:0;
-		padding: 0;
 		background-color: transparent;
-		width: 36%;
-		top: 50%;
-		right: 7%;
-		margin-top: -12em;
+		width: 60%;
+		margin: 0 auto;
 	}
 
 	.work-item{
-		display: none;
-		padding-bottom: 0;
+		overflow-y: scroll;
+		height: 0;
+		padding: 0 117px 0 100px;
+		margin-right: -17px;
+		transition: height .5s ease-in-out;
 	}
 
 	.work-item:first-child{
-		display: block;
+		height: 100%;
 	}
-
 }
 
 
@@ -1007,42 +990,28 @@ footer{
 }
 
 @media screen and (min-width: 1800px){
-	#mainnav a{
-		padding-bottom: 1em;
-		margin: 0 6em;
+
+	.work-text-container{
+	 	max-width: 600px;
+	 	margin: 0 auto;
 	}
 
-	.work-item{
-		margin: 0 auto;
+	.wrapper-right, #thumbnail-container{
+		top: 15vh;
+	}
+
+	#experience{
+		margin-top: 5em;
+		max-width: 600px;
+	}
+
+	#about div{
+		margin: 5em auto;
 		max-width: 600px;
 	}
 
 	.content-container{
-		padding-top: 12vh;
+		margin-top: 20vh;
 	}
 
-
-	#about{
-		max-width: 40%;
-		margin: 0 auto;
-	}
 }
-
-/* Scroll Bar Style */
-::-webkit-scrollbar {
-    width: 4px;
-}
-::-webkit-scrollbar-track {
-    color: #b1b1b1;
-}
- 
-::-webkit-scrollbar-thumb {
-    background: $dark-key-color; 
-    @include border-radius(2px);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: $key-color; 
-}
-
-
