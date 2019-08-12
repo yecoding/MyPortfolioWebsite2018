@@ -19,10 +19,16 @@ gulp.task('copyHTML', function(){
 });
 
 //Minify JS
-gulp.task('minifyJS', function(){
-	gulp.src('src/js/*.js')
-	.pipe(uglify())
-	.pipe(gulp.dest('dist/js'))
+// gulp.task('minifyJS', function(){
+// 	gulp.src('src/js/*.js')
+// 	.pipe(uglify())
+// 	.pipe(gulp.dest('dist/js'))
+// })
+
+//Copy JS
+gulp.task('copyJS', function(){
+	gulp.src('src/js/main.js')
+	.pipe(gulp.dest('dist/js'));
 })
 
 //Compile Sass
@@ -44,10 +50,10 @@ gulp.task('minifyCSS', function(){
 
 // Watch files in src folder
 gulp.task('watch', function(){
-	gulp.watch('src/js/*.js', ['minifyJS']);
+	gulp.watch('src/js/*.js', ['copyJS']);
 	gulp.watch('src/sass/*.scss', ['sass']);
 	gulp.watch('src/*.html', ['copyHTML']); 
 });
 
-gulp.task('default', ['copyHTML', 'minifyJS', 'sass']);
+gulp.task('default', ['copyHTML', 'copyJS', 'sass']);
 

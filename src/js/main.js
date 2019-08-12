@@ -15,6 +15,9 @@ toggleBtn.addEventListener("click", function(){
 //Portfolio Gallery
 
 var workItems = [
+	{thumbnailID: "linkUrec",
+	itemID:"urec"
+	},
 	{thumbnailID: "linkStore",
 	itemID:"onlineStore"
 	},
@@ -32,9 +35,6 @@ var workItems = [
 	},
 	{thumbnailID: "link8188",
 	itemID:"yonge8188Website"
-	},
-	{thumbnailID: "linkPortfolio",
-	itemID:"portfolioWebsite"
 	}
 ];
 

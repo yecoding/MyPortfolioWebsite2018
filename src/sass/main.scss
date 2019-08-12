@@ -195,7 +195,7 @@ body:after{
 	left: 0;
 	right: 0;
 	z-index: -1;
-	background: url('../image/background.jpg') center center;
+	background: #999 url('../image/background.jpg') center center;
 	background-size: cover;
 	background-attachment: scroll;
 }
@@ -208,6 +208,10 @@ body:after{
 .text-dark{
 	font: 100% $font-stack;
 	color: $text-dark;
+}
+
+.text-desc{
+	text-align: left;
 }
 
 .wrapper{ 
@@ -417,15 +421,30 @@ body:after{
 	}
 
 }
-
-#contact-info{
-	padding: 0;
+.icon-container-circle {
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 36px;
+	width: 36px;
+	margin: 0 12px;
+	background-color: $key-color;
+	border-radius: 50%;
+	img {
+		max-width: 24px;
+		max-height: 24px;
+	}
 }
 
-#contact-info{
+#contact-info {
+	padding: 0;
 	li{
 		list-style: none;
 		margin: 1em auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	img{
@@ -438,14 +457,19 @@ body:after{
 
 	a{	
 		color: $text-color;
+		display: flex;
+		align-items: center;
 	}
+}
+
+#aboutIcions {
+	padding: 0 5em;
+	display: flex;
+	flex-direction: row-reverse;
 }
 
 #skills{
 	margin-top: 5em;
-}
-
-#skills{
 	ul{
 		margin: 0;
 		padding: 0;
@@ -457,7 +481,7 @@ body:after{
 	h3{
 		margin: 0;
 		font-size: 120%;
-		color: $dark-key-color;
+		color: $key-color;
 	}
 
 	span{
@@ -467,6 +491,9 @@ body:after{
 }
 
 #about{
+	p {
+		text-align: left;
+	}
 	.text-m span{
 		font-size: 120%;
 		padding-bottom: 5px;
@@ -503,12 +530,10 @@ body:after{
 }
 
 #years{
-
 	p{
 		padding: 0;
 		margin: 0;
 	}
-
 	.text-year{
 		display: inline-block;
 		background-color: $dark-key-color;
@@ -690,7 +715,15 @@ footer{
 	}
 
 	h3 a{
-		border-bottom: 1px solid $text-dark;
+		margin-left: .5em;
+		padding: 0 5px;
+		color: $key-color;
+		border: 1px solid $key-color;
+	}
+
+	h3 a:hover{
+		background-color: $key-color;
+		color: #fff;
 	}
 
 	p a{
@@ -700,7 +733,7 @@ footer{
 	}
 }
 
-#thumbnail-container{
+.thumbnail-center{
 	display: none;
 }
 
@@ -799,15 +832,7 @@ footer{
 	margin-top: -80px;
 	margin-right: -20px;
 	}
-
-/*	#logo-container-high{
-		width: 50%;
-		height: 100px;
-		position: fixed;
-		top: 8vh;
-		right: 0;
-	}*/
-
+	
 	#logo-container img{
 		height: 120px;
 		position: absolute;
@@ -815,14 +840,6 @@ footer{
 		top: 0;
 		margin-left: -60px;
 	}
-
-/*	#logo-container-high img{
-		height: 100px;
-		position: absolute;
-		left: 50%;
-		top: 0;
-		margin-left: -50px;
-	}*/
 
 	#logo-container span{
 	display: inline-block;
@@ -914,6 +931,10 @@ footer{
 		overflow: hidden;
 	}
 
+	.thumbnail-center{
+		display: block;
+	}
+
 	.wrapper-right{
 		width: 50%;
 		position: fixed;
@@ -978,6 +999,7 @@ footer{
 	.work-item:first-child{
 		height: 100%;
 	}
+
 }
 
 

@@ -10,12 +10,11 @@
 	<link rel='shortcut icon' href='ye-favicon.ico' type='image/x-icon'/ >
 	<link href="https://fonts.googleapis.com/css?family=Abel|Limelight" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-
+	<script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="text-light">
 		<div id="logo-container">
-			<span id="arrow-icon">></span>
 			<a href="work.html">
 				<img src="image/yelogo.png" id="mainlogo" alt="Ye">
 				<span class="tooltip-text">Let's see Ye's work</span>
@@ -49,16 +48,22 @@
 		  		<!-- Intro -->
 		  		<section id="intro">
 		  			<div class="text-xxl"><h1 id="greetingText">Hey :)</h1></div>
-		  			<p>I am Ye Wang, a front-end developer/web designer<br/>based in Toronto, Canada</p>
+		  			<p>I am Ye Wang, a UX/UI designer and frontend developer<br/>based in Toronto, Canada</p>
 		  			<a href="work.html" class="link-btn">View My Works</a>
 		  			<ul id="contact-info">
 		  				<li>
-		  					<img src="image/icons8-secured-letter-filled-50.png" alt="email">
-		  					<a href="mailto:yewang.uoft@gmail.com?Subject=Mail%20from%20PortfolioWebsite" target="_top">yewang.uoft@gmail.com</a>
+		  					<!-- <img src="image/icons8-secured-letter-filled-50.png" alt="email"> -->
+		  					<a href="mailto:yewang.uoft@gmail.com?Subject=Mail%20from%20PortfolioWebsite" target="_top">
+		  						<span class="icon-container-circle"><i data-feather="mail"></i></span>
+		  						yewang.uoft@gmail.com
+		  					</a>
 		  				</li>
 		  				<li>
-		  					<img src="image/icons8-github-filled-50.png" alt="github link">
-		  					<a href="https://github.com/yecoding" >https://github.com/yecoding</a>
+		  					<!-- <img src="image/icons8-github-filled-50.png" alt="github link">
+ -->		  				<a href="https://github.com/yecoding" >
+								<span class="icon-container-circle"><i data-feather="github"></i></span>
+ 								https://github.com/yecoding
+ 							</a>
 		  				</li>
 		  			</ul>
 		  		</section>
@@ -68,28 +73,30 @@
 		  			<ul class="cards">
 			   			<li class="card-item">
 			   				<div class="card-left">
-			  					<h3><span>D</span>esign</h3>
-			  					<p>DIGITAL + PHISICAL</p>
-			  					<P>Web design, branding, architecture/interior
-			  						<br>
-			  					Illustrator, Photoshop, Indesign</p>
+			  					<!-- <h3><span>D</span>esign</h3> -->
+			  					<h3>UX/UI</h3>
+			  					<P>User Research, Wireframing, Prototyping 
+			  						<br>Adobe Xd, Illustrator, Photoshop, InDesign, Affinity Designer</p>
 		  					</div>
 		  				</li>
 		  				<li class="card-item">
 		  					<div class="card-right">
-			  					<h3><span>C</span>oding</h3>
-			  					<p class="text-m">FRONT-END + BACK-END</p>
-			  					<P>HTML5, CSS3, JavaScript, JQuery, Angular, React Native
-			  					<br>Node.js, Express.js, SQL</P>
+			  					<!-- <h3><span>C</span>oding</h3> -->
+			  					<h3 class="text-m">FRONT-END</h3>
+			  					<P>HTML5, CSS3, JavaScript
+			  						<br>React, DoneJS, Angular, JQuery, Bootstrap
+			  						<br>Node.js
+			  					</P>
 		  					</div>
 		  				</li>
 		  			</ul>
 		  		</section>
 		  	</div>
 		 </div>
-
   		<footer>© 2018 Ye Wang. All rights reserved.</footer>
-
+  	<script>
+      feather.replace()
+    </script>
 	<script src="js/main.js"></script>
 </body>
 </html>

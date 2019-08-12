@@ -194,7 +194,7 @@ body:after {
   left: 0;
   right: 0;
   z-index: -1;
-  background: url("../image/background.jpg") center center;
+  background: #999 url("../image/background.jpg") center center;
   background-size: cover;
   background-attachment: scroll; }
 
@@ -205,6 +205,9 @@ body:after {
 .text-dark {
   font: 100% "Abel", Helvetica, sans-serif;
   color: #000; }
+
+.text-desc {
+  text-align: left; }
 
 .wrapper {
   margin-top: 70px;
@@ -384,42 +387,62 @@ body:after {
   background-color: #6EB9D6;
   color: #fff; }
 
+.icon-container-circle {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  margin: 0 12px;
+  background-color: #6EB9D6;
+  border-radius: 50%; }
+  .icon-container-circle img {
+    max-width: 24px;
+    max-height: 24px; }
+
 #contact-info {
   padding: 0; }
+  #contact-info li {
+    list-style: none;
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  #contact-info img {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+    vertical-align: middle; }
+  #contact-info a {
+    color: #fff;
+    display: flex;
+    align-items: center; }
 
-#contact-info li {
-  list-style: none;
-  margin: 1em auto; }
-
-#contact-info img {
-  display: inline-block;
-  height: 30px;
-  width: 30px;
-  margin-right: 5px;
-  vertical-align: middle; }
-
-#contact-info a {
-  color: #fff; }
+#aboutIcions {
+  padding: 0 5em;
+  display: flex;
+  flex-direction: row-reverse; }
 
 #skills {
   margin-top: 5em; }
+  #skills ul {
+    margin: 0;
+    padding: 0; }
+  #skills li {
+    list-style: none;
+    margin-bottom: 4em; }
+  #skills h3 {
+    margin: 0;
+    font-size: 120%;
+    color: #6EB9D6; }
+  #skills span {
+    font: 240% "Limelight", cursive;
+    color: #6EB9D6; }
 
-#skills ul {
-  margin: 0;
-  padding: 0; }
-
-#skills li {
-  list-style: none;
-  margin-bottom: 4em; }
-
-#skills h3 {
-  margin: 0;
-  font-size: 120%;
-  color: #245A6B; }
-
-#skills span {
-  font: 240% "Limelight", cursive;
-  color: #6EB9D6; }
+#about p {
+  text-align: left; }
 
 #about .text-m span {
   font-size: 120%;
@@ -636,14 +659,21 @@ footer {
   overflow: hidden; }
 
 .work-item h3 a {
-  border-bottom: 1px solid #000; }
+  margin-left: .5em;
+  padding: 0 5px;
+  color: #6EB9D6;
+  border: 1px solid #6EB9D6; }
+
+.work-item h3 a:hover {
+  background-color: #6EB9D6;
+  color: #fff; }
 
 .work-item p a {
   color: #6EB9D6;
   padding-bottom: 5px;
   border-bottom: 6px solid #6EB9D6; }
 
-#thumbnail-container {
+.thumbnail-center {
   display: none; }
 
 @media screen and (min-width: 900px) and (orientation: landscape) {
@@ -709,26 +739,12 @@ footer {
     top: 50%;
     margin-top: -80px;
     margin-right: -20px; }
-  /*	#logo-container-high{
-		width: 50%;
-		height: 100px;
-		position: fixed;
-		top: 8vh;
-		right: 0;
-	}*/
   #logo-container img {
     height: 120px;
     position: absolute;
     left: 50%;
     top: 0;
     margin-left: -60px; }
-  /*	#logo-container-high img{
-		height: 100px;
-		position: absolute;
-		left: 50%;
-		top: 0;
-		margin-left: -50px;
-	}*/
   #logo-container span {
     display: inline-block; }
   #logo-container a {
@@ -795,6 +811,8 @@ footer {
     top: 20px;
     text-align: center;
     overflow: hidden; }
+  .thumbnail-center {
+    display: block; }
   .wrapper-right {
     width: 50%;
     position: fixed;

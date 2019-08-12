@@ -7,88 +7,90 @@
     <meta name="author" content="Ye Wang">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Ye's Portfolio</title>
-  <link rel='shortcut icon' href='ye-favicon.ico' type='image/x-icon'/ >
+	<link rel='shortcut icon' href='ye-favicon.ico' type='image/x-icon'/ >
 	<link href="https://fonts.googleapis.com/css?family=Abel|Limelight" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body class="text-dark">
-
-		<!-- Main navbar -->
-	  	<div id="togglediv">
-	  		<span></span>
+	<!-- Main navbar -->
+  	<div id="togglediv">
+  		<span></span>
+  	</div>
+  	<nav id="mainnav">
+  		<ul>
+  			<li>
+  				<a href="index.html">HOME</a>
+  				<P>intro + contact</P>
+  			</li>
+  			<li>
+  				<a href="work.html">WORK</a>
+  				<P>design + develop</P>
+  			</li>
+   			<li>
+   				<a href="#" class="active-page">ABOUT</a>
+  				<P>experience / skills</P>
+  			</li>
+  		</ul>
+  	</nav>
+	<!-- Content -->
+	<div class="wrapper bg-white">
+		<div class="content-container">
+			<section id="about">
+				<p>I am a UX designer currently working at Signifi Solutions in GTA. For the past three years, I have been creating functional, accessible, and engaging designs and applications.</p>
+				<p>My formal background in Architecture trained me to be solution-oriented and focus on the context. My digital experience designs always start beyond the screen. Every moment counts in my design practices.</p>
+				<p>I do enjoy learning to code. Building my own design and getting feedback from the development process is always helpful for me to re-think my work as a product.</p>
+			</section>
+			<section id="aboutIcions">
+				<a href="https://github.com/yecoding" >
+					<span class="icon-container-circle"><i data-feather="github"></i></span>
+				</a>
+				<a href="https://www.linkedin.com/in/yewangdesign">
+					<span class="icon-container-circle"><i data-feather="linkedin"></i></span>
+				</a>
+				<a href="https://www.linkedin.com/in/yewangdesign">
+					<span class="icon-container-circle"><img src="image/icon-be.svg" style="color: #fff"></span>
+				</a>
+			</section>
 	  	</div>
-	  	<nav id="mainnav">
-	  		<ul>
-	  			<li>
-	  				<a href="index.html">HOME</a>
-	  				<P>intro + contact</P>
-	  			</li>
-	  			<li>
-	  				<a href="work.html">WORK</a>
-	  				<P>design + develop</P>
-	  			</li>
-	   			<li>
-	   				<a href="#" class="active-page">ABOUT</a>
-	  				<P>experience / skills</P>
-	  			</li>
-	  		</ul>
-	  	</nav>
+	 </div>
 
-
-
-  		<!-- Content -->
-  		<div class="wrapper bg-white">
-  			<div class="content-container">
-  				<section id="about">
-  					<p class="text-l">from Architecture<br>to<br>Web Development</p>
-  					<div>
-  						<p class="text-m"><span>Learning + Creating</span></p>
-  						<p class="text-s">I love to learn, to create, and to take challenges. That's why the first time I tried coding-it was Javascript as I remembered, I immediately fall in love with it. Such passion has been motivated me to keep learning and producing new projects.</p>
-  					</div>
-  					<div>
-  						<p class="text-m"><span>Design and Techniques</span></p>
-  						<p class="text-s">As an architect, I have learned to design, and to think practical building techniques and the connectivity between both. As a web designer and developer, I am always trying to find creative solutions to support design with best technique practices.</p>
-  					</div>
-  				</section>
-
-
-		  	</div>
-		 </div>
-
-		 <div class="wrapper-right">
-		 	<div id="logo-container-high">
-			<a href="index.html"><img src="image/yelogo.png" id="mainlogo" alt="Ye"></a>
+	 <div class="wrapper-right">
+	 	<div id="logo-container-high">
+		<a href="index.html"><img src="image/yelogo.png" id="mainlogo" alt="Ye"></a>
+		</div>
+		<section id="experience">
+			<div class="diagram-column" id="years">
+				<p id="year2009"><span class="text-year">2009</span><span class="triangle"></span></p>
+				<p id="year2012"><span class="text-year">2012</span><span class="triangle"></span></p>
+				<p id="year2015"><span class="text-year">2015</span><span class="triangle"></span></p>
+				
 			</div>
-			<section id="experience">
-	  					<div class="diagram-column" id="years">
-	  						<p id="year2009"><span class="text-year">2009</span><span class="triangle"></span></p>
-	  						<p id="year2012"><span class="text-year">2012</span><span class="triangle"></span></p>
-	  						<p id="year2015"><span class="text-year">2015</span><span class="triangle"></span></p>
-	  						
-	  					</div>
-	  					<div class="diagram-column" id="arch">
-	  						<p>Arch.</p>
-	  						<div class="progress-container">
-	  							<div class="progress-arch"></div>
-	  						</div>
-	  					</div>
-	  					<div class="diagram-column" id="graphic">
-	  						<p>Graphic</p>
-	  						<div class="progress-container">
-	  							<div class="progress-graphic"></div>
-	  						</div>
-	  					</div>
-	  					<div class="diagram-column" id="development">
-	  						<p>Web</p>
-	  						<div class="progress-container">
-	  							<div class="progress-development"></div>
-	  						</div>
-	  					</div>
-	  					
-	  		</section>
-  		</div>
-  		<footer>© 2018 Ye Wang. All rights reserved.</footer>
-<script src="js/main.js"></script>
+			<div class="diagram-column" id="arch">
+				<p>Arch.</p>
+				<div class="progress-container">
+					<div class="progress-arch"></div>
+				</div>
+			</div>
+			<div class="diagram-column" id="graphic">
+				<p>Graphic</p>
+				<div class="progress-container">
+					<div class="progress-graphic"></div>
+				</div>
+			</div>
+			<div class="diagram-column" id="development">
+				<p>Web</p>
+				<div class="progress-container">
+					<div class="progress-development"></div>
+				</div>
+  			</div>	
+  		</section>
+	</div>
+	<footer>© 2018 Ye Wang. All rights reserved.</footer>
+  	<script>
+      feather.replace()
+    </script>
+	<script src="js/main.js"></script>
 </body>
 </html>
